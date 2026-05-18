@@ -70,8 +70,8 @@ char ScalarConverter::_CharConverter(const std::string &convert)
         return (convert[0]);
 
     std::string tmp = convert;
-    if (!tmp.empty() && tmp.back() == 'f' && tmp.find('.') != std::string::npos)
-        tmp.pop_back();
+    if (!tmp.empty() && tmp[tmp.size() - 1] == 'f' && tmp.find('.') != std::string::npos)
+        tmp.erase(tmp.size() - 1);
 
     double value;
     std::istringstream iss(tmp);
@@ -98,8 +98,8 @@ int ScalarConverter::_IntConverter(const std::string &convert)
         return static_cast<int>(convert[0]);
 
     std::string tmp = convert;
-    if (!tmp.empty() && tmp.back() == 'f' && tmp.find('.') != std::string::npos)
-        tmp.pop_back();
+    if (!tmp.empty() && tmp[tmp.size() - 1] == 'f' && tmp.find('.') != std::string::npos)
+        tmp.erase(tmp.size() - 1);
 
     double value;
     std::istringstream iss(tmp);
@@ -128,8 +128,8 @@ float ScalarConverter::_FloatConverter(const std::string &convert)
         return -std::numeric_limits<float>::infinity();
 
     std::string tmp = convert;
-    if (!tmp.empty() && tmp.back() == 'f' && tmp.find('.') != std::string::npos)
-        tmp.pop_back();
+    if (!tmp.empty() && tmp[tmp.size() - 1] == 'f' && tmp.find('.') != std::string::npos)
+        tmp.erase(tmp.size() - 1);
 
     float value;
     std::istringstream iss(tmp);
@@ -155,8 +155,8 @@ double ScalarConverter::_DoubleConverter(const std::string &convert)
         return -std::numeric_limits<double>::infinity();
 
     std::string tmp = convert;
-    if (!tmp.empty() && tmp.back() == 'f' && tmp.find('.') != std::string::npos)
-        tmp.pop_back();
+    if (!tmp.empty() && tmp[tmp.size() - 1] == 'f' && tmp.find('.') != std::string::npos)
+        tmp.erase(tmp.size() - 1);
 
     double value;
     std::istringstream iss(tmp);

@@ -27,7 +27,7 @@ RESET	=	\033[0m
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJS) -o "$(NAME)"
 	@echo "$(GREEN)Program $(NAME) compiled successfully!$(RESET)"
 	@echo "$(CYAN)"	
 	@echo "   ____  _____ _____ _____  _____     "
@@ -48,7 +48,7 @@ clean:
 	@echo "$(CYAN)Object files removed.$(RESET)"
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f "$(NAME)"
 	@echo "$(CYAN)Program $(NAME) removed.$(RESET)"
 
 re: fclean all
